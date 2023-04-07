@@ -1,0 +1,9 @@
+{
+  "include": [
+    "$(MODDABLE)/examples/manifest_base.json",
+    "$(MODULES)/files/sd/manifest_spi.json"
+  ],
+  "modules": {
+    "*": "./main"
+  }
+}
