@@ -42,22 +42,22 @@ void xs_sd_mount ( xsMachine *the ) {
 
     if (xsmcHas(xsArg(0), xsID_miso)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_miso);
-    	miso = xsmcToNumber(xsVar(0));
+    	miso = xsmcToInteger(xsVar(0));
     }
 
     if (xsmcHas(xsArg(0), xsID_mosi)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_mosi);
-    	mosi = xsmcToNumber(xsVar(0));
+    	mosi = xsmcToInteger(xsVar(0));
     }
 
     if (xsmcHas(xsArg(0), xsID_clk)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_clk);
-    	clk = xsmcToNumber(xsVar(0));
+    	clk = xsmcToInteger(xsVar(0));
     }
 
     if (xsmcHas(xsArg(0), xsID_cs)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_cs);
-    	cs = xsmcToNumber(xsVar(0));
+    	cs = xsmcToInteger(xsVar(0));
     }
 
     if (xsmcHas(xsArg(0), xsID_ff)) {
@@ -67,12 +67,12 @@ void xs_sd_mount ( xsMachine *the ) {
 
     if (xsmcHas(xsArg(0), xsID_transfer_sz)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_transfer_sz);
-    	transfer_sz = xsmcToNumber(xsVar(0));
+    	transfer_sz = xsmcToInteger(xsVar(0));
     }
 
     if (xsmcHas(xsArg(0), xsID_max_files)) {
     	xsmcGet(xsVar(0), xsArg(0), xsID_max_files);
-    	max_files = xsmcToNumber(xsVar(0));
+    	max_files = xsmcToInteger(xsVar(0));
     }
 
     // Options for mounting the filesystem.
@@ -118,7 +118,7 @@ void xs_sd_mount ( xsMachine *the ) {
         xsmcSetBoolean(xsResult, false); return;
     }
 
-    sdmmc_card_print_info(stdout, &xs_sdmmc_card);
+//    sdmmc_card_print_info(stdout, &xs_sdmmc_card);
 
     xsmcSetBoolean(xsResult, true);
 }
