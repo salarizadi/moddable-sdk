@@ -17,7 +17,7 @@
 
 ### 3. And now you can setup SD card in your project Take a complete look at the sample code It's very simple It's a complete sample
 
-### 4. Functions
+### Functions
 
 ```
 class SD {
