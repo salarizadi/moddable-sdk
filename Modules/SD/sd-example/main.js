@@ -86,6 +86,6 @@ File.delete(root + "test2.txt");
 File.delete(root + "preferences.json");
 File.delete(root + "test.bin");
 
-// trace("Format SD Card : " + $SD.format()); // Need ESP-IDF 5
+// trace("Format SD Card : " + $SD.format()); // Need ESP-IDF 5 
 
 trace("Disable : " + JSON.stringify($SD.disable()));
