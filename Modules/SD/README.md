@@ -57,7 +57,19 @@ $SD.mount({
 ### Get full info of SDcard
 
 ```
-$SD.info() // Return JSON
+$SD.info()
+
+This returns a JSON Object :
+{
+  "name",
+  "csd_ver",
+  "speed",
+  "storage", // Storage unit : MB
+  "sector_size",
+  "capacity",
+  "sd_spec",
+  "bus_width"
+}
 ```
 
 ### Format/Erase SDcard
