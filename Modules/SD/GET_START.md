@@ -30,7 +30,7 @@ class SD {
 }
 ```
 
-# Import
+### Import
 
 ```
 import SD from "sd"
@@ -70,6 +70,33 @@ $SD.format() // Need ESP-IDF version 5 or higher
 
 ```
 $SD.disable()
+```
+
+### It shows this when you run the example on an XS console, I tested with a 2GB and 32GB SD card.
+
+> Notes : When the $SD.info() function is executed, the output of my memory card information is different from yours
+
+```
+SD initialize : true
+
+This is a test.
+We can write multiple values.
+This is the end of the test.
+
+test.txt renamed to test2.txt
+
+name: Brian, city: Del Mar, state: CA
+
+File length: 20
+Last five shorts: 5 6 7 8 9 
+System Volume Information        directory
+test.bin                         file          20 bytes
+test2.txt                        file          75 bytes
+preferences.json                 file          46 bytes
+
+Info : {"name":1073430784,"csd_ver":0,"speed":25000000,"storage":1898,"sector_size":512,"capacity":3887104,"sd_spec":2,"bus_width":5}
+
+Disable : {"unmount":true,"free":true}
 ```
 
 ### Notes
