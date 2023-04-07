@@ -57,7 +57,7 @@ $SD.mount({
 ### Get full info of SDcard
 
 ```
-$SD.info()
+$SD.info() // Return JSON
 ```
 
 ### Format/Erase SDcard
