@@ -26,7 +26,7 @@ class SD {
     busFree ( )
     disable ( )
     info ( )
-    format ( )
+    format ( ) // Need ESP-IDF version 5 or higher
 }
 ```
 
