@@ -124,3 +124,15 @@ Disable : {"unmount":true,"free":true}
   ```
   format ( ) @ "xs_sd_format";
   ```
+ + You may want to use the display and the SD card at the same time, but you should note that the SPI port of the display must be different from the SPI port of the    SD card. I tested with VSPI_HOST myself, there was no problem, but maybe it is different for you and you should enter HSPI_HOST, this will prevent the error :
+ > Failed to initialize bus
+ + Example of screen settings in your project manifest :
+ ```
+ "defines": {
+    "ili9341": {
+      ...
+      "spi_port": "VSPI_HOST" // HSPI_HOST
+    }
+ }
+ ```
+ 
