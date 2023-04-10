@@ -1,14 +1,39 @@
 /**
- * Copyright (c) 2023 Salarizadi
- * Github : https://github.com/salarizadi
+ * Copyright (c) 2023
+ * @Version    : 1.5.0
+ * @Repository : https://github.com/salarizadi/moddable-sdk/tree/main/Modules/SD
+ * @Author     : https://salarizadi.github.io
  */
 
 #include "xsmc.h"
 #include "mc.xs.h"
+#include "mc.defines.h"
 #include "xsHost.h"
 
 #include "esp_vfs_fat.h"
 #include "sdmmc_cmd.h"
+
+#ifdef MODDEF_SD_SPI_HOST
+    const int xs_sd_spi_host = MODDEF_SD_SPI_HOST;
+#else
+    const int xs_sd_spi_host = 1; // Default HSPI_HOST
+#endif
+#define xs_SDSpiHost() {\
+    .flags = SDMMC_HOST_FLAG_SPI | SDMMC_HOST_FLAG_DEINIT_ARG, \
+    .slot = xs_sd_spi_host, \
+    .max_freq_khz = SDMMC_FREQ_DEFAULT, \
+    .io_voltage = 3.3f, \
+    .init = &sdspi_host_init, \
+    .set_bus_width = NULL, \
+    .get_bus_width = NULL, \
+    .set_bus_ddr_mode = NULL, \
+    .set_card_clk = &sdspi_host_set_card_clk, \
+    .do_transaction = &sdspi_host_do_transaction, \
+    .deinit_p = &sdspi_host_remove_device, \
+    .io_int_enable = &sdspi_host_io_int_enable, \
+    .io_int_wait = &sdspi_host_io_int_wait, \
+    .command_timeout_ms = 0, \
+}
 
 #define XS_SD_MOUNT_POINT "/sdcard"
 const char xs_sd_mount_point[] = XS_SD_MOUNT_POINT;
@@ -24,7 +49,7 @@ const char xs_sd_mount_point[] = XS_SD_MOUNT_POINT;
 #define XS_SD_AUS (16 * 1024) // allocation_unit_size
 
 sdmmc_card_t *xs_sdmmc_card;
-sdmmc_host_t xs_sd_host = SDSPI_HOST_DEFAULT();
+sdmmc_host_t xs_sd_host = xs_SDSpiHost();
 
 void xs_sd_destructor ( void *data ) { }
 
@@ -118,7 +143,7 @@ void xs_sd_mount ( xsMachine *the ) {
         xsmcSetBoolean(xsResult, false); return;
     }
 
-//    sdmmc_card_print_info(stdout, &xs_sdmmc_card);
+    // sdmmc_card_print_info(stdout, &xs_sdmmc_card);
 
     xsmcSetBoolean(xsResult, true);
 }
@@ -159,6 +184,9 @@ void xs_sd_info ( xsMachine *the ) {
 
     xsmcSetInteger(xsVar(0), xs_sdmmc_card->scr.bus_width);
     xsmcSet(xsResult, xsID_bus_width, xsVar(0));
+
+    xsmcSetInteger(xsVar(0), xs_sd_host.slot);
+    xsmcSet(xsResult, xsID_spi_host, xsVar(0));
 }
 
 // Need ESP-IDF 5
