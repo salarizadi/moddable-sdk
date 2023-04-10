@@ -33,9 +33,7 @@
 	]
   ```
 
-### 4. And now you can setup SD card in your project Take a complete look at the sample code It's very simple It's a complete sample
-
-### 5. Setting up the project manifest :
+### 4. Setting up the project manifest :
   + If you have a display or SPI host other than the SD card and there is an interference with the setup process, you can change your SD card host via your project       manifest definitions, for example:
   ```
   "defines": {
@@ -43,6 +41,8 @@
     "sd_spi_host": 2 // Note: HSPI_HOST is equal to 1 and VSPI_HOST is equal to 2. Default is HSPI_HOST.
   }
   ```
+
+### 5. And now you can setup SD card in your project Take a complete look at the sample code It's very simple It's a complete sample
 
 ### Functions
 
