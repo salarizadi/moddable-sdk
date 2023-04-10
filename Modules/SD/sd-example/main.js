@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2023 Salarizadi
- * Github : https://github.com/salarizadi
+ * Copyright (c) 2023
+ * @Version    : 1.5.0
+ * @Repository : https://github.com/salarizadi/moddable-sdk/tree/main/Modules/SD
+ * @Author     : https://salarizadi.github.io
  */
 
 import SD from "sd"
 import {File, Iterator, System} from "file";
 
-const $SD  = new SD();
+const $SD = new SD();
 const root = "/sdcard/";
 
 let file;
@@ -21,7 +23,7 @@ trace("SD initialize : " + $SD.mount({
     transfer_sz: 4000,
     max_files: 5,
     aus: 16 * 1024 // Allocation unit size
-}));
+}) + "\n\n");
 
 // writing/reading strings
 file = new File(root + "test.txt", true);
@@ -43,7 +45,7 @@ if (File.exists(root + to))
 trace("\n");
 
 // writing/reading JSON
-let preferences = { name: "Brian", city: "Del Mar", state: "CA" };
+let preferences = {name: "Brian", city: "Del Mar", state: "CA"};
 file = new File(root + "preferences.json", true);
 file.write(JSON.stringify(preferences));
 file.close();
