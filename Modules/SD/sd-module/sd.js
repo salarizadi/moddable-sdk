@@ -1,6 +1,8 @@
 /**
- * Copyright (c) 2023 Salarizadi
- * Github : https://github.com/salarizadi
+ * Copyright (c) 2023
+ * @Version    : 1.5.0
+ * @Repository : https://github.com/salarizadi/moddable-sdk/tree/main/Modules/SD
+ * @Author     : https://salarizadi.github.io
  */
 
 export default class SD @ "xs_sd_destructor" {
