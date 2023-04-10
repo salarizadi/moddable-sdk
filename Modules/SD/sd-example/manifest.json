@@ -3,6 +3,9 @@
     "$(MODDABLE)/examples/manifest_base.json",
     "$(MODULES)/files/sd/manifest_spi.json"
   ],
+  "defines": {
+    "sd_spi_host": 2
+  },
   "modules": {
     "*": "./main"
   }
