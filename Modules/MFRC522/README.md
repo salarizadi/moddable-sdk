@@ -22,7 +22,7 @@ After downloading the library, you should move the folders to their original pla
       
   * Folder Examples (Optional) : The exact folder must have this address
       
-      ```$(MODULES)/examples/MFRC522```
+      ```$(MODDABLE)/examples/MFRC522```
       * Rename folder Examples to MFRC522
      
 
