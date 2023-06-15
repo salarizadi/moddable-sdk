@@ -8,6 +8,7 @@ This library is written for the RFID-RC522 module. You can easily read and even 
       * [Wiring](#wiring)
   * [Functions](#functions)
   * [Examples](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/MFRC522/Examples)
+  * [Support cards](#support-cards)
 
 
 ## Move folders
@@ -65,8 +66,20 @@ Note : You can do custom wiring yourself, but you must enter your custom pins in
   | `haltA` | Commands a PICC in ACTIVE state to go into HALT state | `NULL` | `bool`
   | `stopCrypto` | Used to exit the PCD from its authenticated state. Remember to call this function after communicating with an authenticated PICC - otherwise no new communications can start. | `NULL` | `NULL`
   
+## Support cards
+<a id="functions"></a>
+
+| Type | Support | Show sectors
+| --- | :-- | :-- |
+| `MIFARE Mini, 320 bytes` | ✔ | ✔ |
+| `MIFARE 1KB` | ✔ | ✔ |
+| `MIFARE 4KB` | ✔ | ✔ |
+| `MIFARE Ultralight or Ultralight C` | ✔ | ✔ |
+| `MIFARE DESFire` | ✔ | ❌
+| `PICC compliant with ISO/IEC 18092 (NFC)` | ✔ | ❌
+| `MIFARE Plus` | ✔ | ❌
+| `MIFARE TNP3XXX` | ✔ | ❌
+
 
 ## Buy coffee for me ☕
-  I worked very hard for this project. If you want to support me : [Click me](https://github.com/salarizadi/moddable-sdk/blob/main/README.md#buy-coffee-for-me-)
-  
-  
+  I worked very hard for this project. If you want to support me : [Click me](https://github.com/salarizadi/moddable-sdk/blob/main/README.md#buy-coffee-for-me-)  
