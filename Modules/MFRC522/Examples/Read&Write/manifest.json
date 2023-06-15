@@ -1,0 +1,24 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODULES)/drivers/MFRC522/manifest.json"
+	],
+	"modules": {
+		"*": [
+			"./MFRC522",
+			"./main"
+		]
+	},
+	"preload": [
+		"./MFRC522"
+	],
+	"defines": {
+		"mfrc522": {
+			"miso": 25,
+			"mosi": 23,
+			"clk": 19,
+			"cs": 22,
+			"rst": 14
+		}
+	}
+}

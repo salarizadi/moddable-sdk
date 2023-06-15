@@ -1,0 +1,15 @@
+{
+  "platforms": {
+    "esp32": {
+      "modules": {
+        "*": [
+          "./MFRC522",
+          "./esp32/MFRC522"
+        ]
+      },
+      "preload": [
+        "MFRC522"
+      ]
+    }
+  }
+}
