@@ -1,5 +1,5 @@
 ## About This Module
-This module can connect multiple boards with UART. The great feature of this module is that you can add several commands like JavaScript eventListener that whenever you need that command, you can call that command from board #1 and execute it on board #2. You can better understand what I mean in the <a href="#example">examples</a>.
+This module can connect multiple boards with UART. The great feature of this module is that you can add several commands like JavaScript eventListener that whenever you need that command, you can call that command from board #1 and execute it on board #2. You can better understand what I mean in the [examples](#example).
 
 [@phoddie](https://github.com/phoddie) Thanks for your help with this project, You can see our [conversation](https://github.com/Moddable-OpenSource/moddable/discussions/1180).
 
@@ -26,8 +26,8 @@ const $Cluster = new Cluster({
 > This picture is an example of esp32 wiring, just so you know what to do, this module works for boards that support serial UART.
 <img src="https://github.com/salarizadi/moddable-sdk/assets/67143370/aeb040e1-f968-4930-9b4a-077a0741693c" width="250" height="250">
 
-## Example code
-<a id="example">
+## Example
+<a id="example"></a>
 
 First board :
 ```javascript
