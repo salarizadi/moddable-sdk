@@ -1,9 +1,10 @@
 /**
  * Copyright (c) 2023
- * @Version    : 1.0.0
+ * @Version    : 1.2.0
  * @Repository : https://github.com/salarizadi/moddable-sdk/tree/main/Modules/cluster
  * @Author     : https://salarizadi.github.io
  */
+import TextDecoder from "text/decoder";
 
 export default class Cluster {
 
@@ -32,10 +33,8 @@ export default class Cluster {
             if ( count ) {
                 const read = this.read();
                 if ( read && read.byteLength ) {
-                    let string = "", bytes = new Uint8Array(read), length = bytes.length;
-                    for (let i = 0; i < length; i++) {
-                        string += String.fromCodePoint(bytes[i])
-                    }
+                    const decoder = new TextDecoder;
+                    const string  = decoder.decode(read, {stream: true});
                     if ( typeof string === "string" ) {
                         const message = /^\s*(\{|\[)/.test(string) ? JSON.parse(string) : "";
                         if ( typeof message === "object" ) {
