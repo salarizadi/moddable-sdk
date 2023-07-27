@@ -5,6 +5,7 @@ I'm interested in Moddable SDK, it's really great and amazing, that's why I crea
 Latest modules :
   - SDcard for (esp32) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/SD)
   - MFRC522 for (esp32) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/MFRC522)
+  - Clustering for (All boards) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/cluster)
   - ? (Coming soon)
 
 ## Buy coffee for me ☕
