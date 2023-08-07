@@ -24,6 +24,7 @@ As far as I know and I have tested it, it does not have protocol and address res
 
   - Select an example from the [examples](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/IRRemote/examples) folder and upload it to your board
 
+<a id="sample-raw"></a>
 ## Sample raw data received from control or other IR sensors
 
  > This data sample is from the power button of this control :
