@@ -2,11 +2,13 @@
 This module helps you to accurately set up infrared control sensors. This module is reliable because it received the code correctly and sent the correct code to most sensors such as (RGB light, LG TV, etc.).
 
 ## What systems does it work for?
-receiver test
-I tested with the controller (RGB light, LG TV, etc.) and it can receive the correct code and data.
+- Receiver test
 
-Transmitter test
-I was able to send the raw data received from the ESP32 to the systems (LG TV, RGB Lights, etc.) and these systems executed the command correctly.
+  I tested with the controller (RGB light, LG TV, etc.) and it can receive the correct code and data.
+
+- Transmitter test
+
+  I was able to send the raw data received from the ESP32 to the systems (LG TV, RGB Lights, etc.) and these systems executed the command correctly.
 
 As far as I know and I have tested it, it does not have protocol and address restrictions, but you can test it yourself and send your opinion.
 
