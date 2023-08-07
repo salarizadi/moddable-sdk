@@ -6,6 +6,7 @@ Latest modules :
   - SDcard for (esp32) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/SD)
   - MFRC522 for (esp32) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/MFRC522)
   - Clustering for (All boards) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/cluster)
+  - IRRemote for (All boards, but required RMT) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/IRRemote)
   - ? (Coming soon)
 
 ## Buy coffee for me ☕
