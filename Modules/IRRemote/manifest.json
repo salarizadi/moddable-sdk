@@ -1,0 +1,8 @@
+{
+  "include": [
+    "$(MODULES)/pins/rmt/manifest.json"
+  ],
+  "modules": {
+    "*": "./IRRemote"
+  }
+}
