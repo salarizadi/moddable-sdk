@@ -1,0 +1,2 @@
+## About
+This is a very accurate and high-speed library to receive and send data at 315/433MHz frequency, just set and use the 433/315MHz remote control module to the desired pin of your development board like ESP32 and [follow the examples](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/RCSwitch/examples). [I wrote this library from here](https://github.com/sui77/rc-switch) and adapted it for Moddable SDK
