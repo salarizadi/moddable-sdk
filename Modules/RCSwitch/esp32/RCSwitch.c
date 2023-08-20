@@ -17,6 +17,7 @@ typedef struct {
 	xsMachine *the;
 	xsSlot	  obj;
 	RCSWITCH_t RCSwitch;
+	TaskHandle_t task;
 
 	uint8_t	mode;
 	uint8_t	pin;
@@ -30,8 +31,13 @@ void xs_rcswitch_destructor (void *data) {
     xsRCSwitch rcswitch = data;
     if (NULL == rcswitch)
     	return;
+    	
     gpio_set_intr_type(rcswitch->pin, GPIO_INTR_DISABLE);
     gpio_isr_handler_remove(rcswitch->pin);
+
+    if (rcswitch->mode == 0)
+        vTaskDelete(rcswitch->task);
+
     c_free(rcswitch);
 }
 
@@ -145,7 +151,7 @@ void xs_rcswitch (xsMachine *the) {
 
     switch (rcswitch->mode) {
          case 0:
-             xTaskCreate(&xs_rcswitch_receiver, "xs_rcswitch_receiver", 1024 * 4, rcswitch, 2, NULL);
+             xTaskCreate(&xs_rcswitch_receiver, "xs_rcswitch_receiver", 1024 * 4, rcswitch, 2, &rcswitch->task);
              break;
          case 1:
              rcswitch_init(&rcswitch->RCSwitch);
