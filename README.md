@@ -8,6 +8,7 @@ Latest modules :
   - Clustering [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/cluster)
   - IRRemote [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/IRRemote)
   - RCSwitch (315/433Mhz) [GET START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/RCSwitch)
+  - Keypad [GET_START](https://github.com/salarizadi/moddable-sdk/tree/main/Modules/keypad)
   - ? (Coming soon)
 
 ## Buy coffee for me ☕
