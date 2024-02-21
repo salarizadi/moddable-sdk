@@ -19,5 +19,21 @@ new Keypad({
 })
 ```
 
+## 4x4 keyboard example (ESP32):
+```js
+new Keypad({
+    map    : [
+        ["1", "2", "3", "A"],
+        ["4", "5", "6", "B"],
+        ["7", "8", "9", "C"],
+        ["*", "0", "#", "D"]
+    ],
+    rows   : [15, 14, 16, 17],
+    columns: [4, 13, 2, 12]
+}, key => {
+    trace(`\nYou pressed the key (${key})`)
+})
+```
+
 ## Warning
 - Be careful to enter all the keyboard pins in order because it will cause the keys to be incorrectly displayed and not recognized correctly.
