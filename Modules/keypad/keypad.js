@@ -42,9 +42,8 @@ export default class {
 
         which = $this.#config.rows.includes(config.pin) ? "rows" : which
         which = $this.#config.columns.includes(config.pin) ? "cols" : which
-
-        if (typeof $this.#pins[config.pin] !== "undefined")
-            $this.#pins[config.pin].close()
+        
+        $this.#pins[config.pin]?.close()
 
         return $this.#pins[config.pin] = new Digital({
             edge: Digital.Rising | Digital.Falling,
